@@ -85,13 +85,59 @@ def edit_record():
         for k,v in doc.items():
             if k != "_id":
                 print(k + ": " + v)
+    print("")
     userInput = input("Enter which field you want to edit > ")
     if userInput == "first":
-        firstNew = input("Enter new First Name > ")
+        print("")
+        firstNew = input("Enter NEW First Name > ")
         try: 
             coll.update_one(doc, {'$set': {'first': firstNew}})
         except:
             print("Error")
+    elif userInput == "last":
+        print("")
+        lastNew = input("Enter NEW Last Name > ")
+        try: 
+            coll.update_one(doc, {'$set': {'last': lastNew}})
+        except:
+            print("Error")
+    elif userInput == "dob":
+        print("")
+        dobNew = input("Enter NEW Date of Birth (dd/mm/yyyy) > ")
+        try: 
+            coll.update_one(doc, {'$set': {'dob': dobNew}})
+        except:
+            print("Error")
+    elif userInput == "gender":
+        print("")
+        genderNew = input("Enter NEW Gender (m/f) > ")
+        try: 
+            coll.update_one(doc, {'$set': {'gender': genderNew}})
+        except:
+            print("Error")
+    elif userInput == "hair_colour":
+        print("")
+        hairNew = input("Enter NEW Hair Colour > ")
+        try: 
+            coll.update_one(doc, {'$set': {'hair_colour': hairNew}})
+        except:
+            print("Error")
+    elif userInput == "occupation":
+        print("")
+        occupNew = input("Enter NEW Occupation > ")
+        try: 
+            coll.update_one(doc, {'$set': {'occupation': occupNew}})
+        except:
+            print("Error")
+    elif userInput == "nationality":
+        print("")
+        nationalityNew = input("Enter NEW Nationality > ")
+        try: 
+            coll.update_one(doc, {'$set': {'nationality': nationalityNew}})
+        except:
+            print("Error")
+    else:
+        print("Wrong Field!")
 
 def main_loop():
     while True:
